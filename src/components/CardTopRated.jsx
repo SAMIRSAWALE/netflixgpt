@@ -24,7 +24,7 @@ const CardTopRated = ({data}) =>{
             onClick={() => handleCallMovieDetailsPage(movie.id)}
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
-            className="rounded-md hover:scale-105 transition-transform duration-300"
+            className="rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer"
           />
         </div>
       ))}

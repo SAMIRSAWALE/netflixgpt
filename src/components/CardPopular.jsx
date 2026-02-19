@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 const CardPopular = ({ data }) => {
   const { results } = data;
+ const navigate = useNavigate();
 
+        const handleCallMovieDetailsPage = (id) => {
+            // console.log("this is the id of that movie",id)
+            navigate(`/movie/${id}`);
+        }
   return (
     <div className="">
       <div className="absolute z-10 w-full px-4 text-4xl text-white font-semibold" style={{marginTop: "-50px"}}>
@@ -11,8 +18,9 @@ const CardPopular = ({ data }) => {
         <div key={movie.id} className="flex-shrink-0 w-40">
           <img
             src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+            onClick={() => handleCallMovieDetailsPage(movie.id)}
             alt={movie.title}
-            className="rounded-md hover:scale-105 transition-transform duration-300"
+            className="rounded-md hover:scale-105 transition-transform duration-300 cursor-pointer"
           />
         </div>
       ))}
