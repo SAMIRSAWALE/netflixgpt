@@ -4,10 +4,11 @@ import VideoTrailer from "./VideoTrailer";
 import useFetchTrailer from "../hooks/useFetchTrailer";
 
 const MainContainer = () => {
-    
+
   useFetchTrailer();
   const data = useSelector((state) => state.nowPlaying);
-  if (!data?.data) return null;
+
+  if (!data?.movie_trailer || !data?.data) return;
 
   return (
     <div className="relative h-screen">

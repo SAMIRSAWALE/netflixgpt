@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setMovieTrailer, setNowPlaying } from "../utils/redux-store/slice-store/nowPlayingSlice";
+import { setMovieTrailer } from "../utils/redux-store/slice-store/nowPlayingSlice";
 import { auth_token } from "../utils/const";
 
  
@@ -9,6 +9,7 @@ import { auth_token } from "../utils/const";
 
     useEffect(() => {
         // if(id === null)return;
+        // console.log("MY NOW PLAYING COME HERE");
         fetchUpComingMovies();
     },[])
     async function fetchUpComingMovies()

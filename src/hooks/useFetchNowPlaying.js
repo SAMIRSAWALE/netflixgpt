@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setUpcoming } from "../utils/redux-store/slice-store/nowPlayingSlice";
+import { setNowPlaying } from "../utils/redux-store/slice-store/nowPlayingSlice";
 import { auth_token } from "../utils/const";
 
+ 
  const useFetchUpComing = () => {
  const dispatch = useDispatch();
 
@@ -11,11 +12,13 @@ import { auth_token } from "../utils/const";
     },[])
     async function fetchUpComingMovies()
     {
-        const reponse = await fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=4',
+        const reponse = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1',
             auth_token
         );
         const data = await reponse.json();
-        dispatch(setUpcoming(data));
+        dispatch(setNowPlaying(data))
+
+        // console.log("this is the data in browser", data);
     }
 }
 export default useFetchUpComing;
