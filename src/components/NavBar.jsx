@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { removeUser, setUser } from "../utils/redux-store/slice-store/userSlice";
+import GptSearch from "./GptSearch";
 
 const NavBar = () => {
 
@@ -50,6 +51,8 @@ const NavBar = () => {
         <div className="fixed top-0 w-full z-50 flex justify-between 
                 bg-gradient-to-b from-black/80 to-transparent p-4">
             <img src="/netflix-navbar.png" alt="logo on netflix" className="w-32" style={{ height: 100 }} />
+            <GptSearch />
+            
             {user.email && ( <div className="flex">
                 <div className="flex items-center gap-3">
                      <h3 className="text-2xl text-white border-2 border-white p-3 rounded-lg">{user.displayName}</h3>
