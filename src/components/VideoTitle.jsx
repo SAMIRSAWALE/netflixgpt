@@ -2,6 +2,7 @@ import { FaInfoCircle, FaPlay } from "react-icons/fa";
 
 const VideoTitle = ({ nowPlayingData }) => {
 
+
     // console.log("this is the data i am getting in video title", nowPlayingData.results[0].original_title);
 
     return (
