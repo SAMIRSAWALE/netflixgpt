@@ -1,10 +1,13 @@
+import toast from "react-hot-toast";
+
 const ValidationFunction = (email, password) => {
 
   email = email.trim();
   password = password.trim();
 
   if (email === "" || password === "") {
-    alert("Please fill all the fields");
+    // alert("Please fill all the fields");
+    toast.success("Please fill all the fields ❤️");
     return false;
   }
 

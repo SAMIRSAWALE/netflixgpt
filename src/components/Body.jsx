@@ -8,21 +8,21 @@ import NavBar from "./NavBar";
 
 
 const Body = () => {
-    const AppLayout = () => {
-        return (
-            <div>
-                <Provider store={appStore}>
-                    <NavBar />
-                    <Outlet />
-                </Provider>
-            </div>
-        );
-    }
+    // const AppLayout = () => {
+    //     return (
+    //         <div>
+    //             <Provider store={appStore}>
+    //                 <NavBar />
+    //                 <Outlet />
+    //             </Provider>
+    //         </div>
+    //     );
+    // }
     const AppRoute = createBrowserRouter([
-        {
-            path: "/",
-            element: <AppLayout />,
-            children: [
+        
+            // path: "/",
+            // element: <AppLayout />,
+            // children: [
                 {
                     path: "/",
                     element: <Login />
@@ -35,8 +35,7 @@ const Body = () => {
                     path: "/movie/:id",
                     element: <MovieDetails />
                 }
-            ]
-        }
+   
     ]);
     return (
         <div>
