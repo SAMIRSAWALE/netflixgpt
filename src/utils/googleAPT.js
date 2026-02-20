@@ -13,7 +13,7 @@ const handleGptSearch = async (query) => {
         messages: [
             {
                 role: "user",
-                content: `You are a movie recommendation AI for Netflix. Based on the user's query, suggest exactly 3 movie names. Return ONLY a JSON array of strings, no explanation, no markdown, nothing else. Example output: ["Inception", "Interstellar", "The Dark Knight"]\n\nUser query: ${query}`
+                content: `You are a movie recommendation AI for Netflix. Based on the user's query, suggest exactly 6 movie names. Return ONLY a JSON array of strings, no explanation, no markdown, nothing else. Example output: ["Inception", "Interstellar", "The Dark Knight","Superman","BatMan","Annebella"]\n\nUser query: ${query}`
             }
         ],
     });

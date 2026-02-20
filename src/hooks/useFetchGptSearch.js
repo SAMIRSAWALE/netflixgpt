@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setGptMovieCards } from "../utils/redux-store/slice-store/nowPlayingSlice";
+import { clearMovieDetails, setGptMovieCards } from "../utils/redux-store/slice-store/nowPlayingSlice";
 import { auth_token } from "../utils/const";
 
 const useFetchSearchMovie = ({ query }) => {
@@ -8,6 +8,7 @@ const useFetchSearchMovie = ({ query }) => {
 
     useEffect(() => {
         if (!query || query.length === 0) return;
+        dispatch(clearMovieDetails());
         fetchMovies();
     }, [query]); // add query as dependency!
 

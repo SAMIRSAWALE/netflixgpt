@@ -12,4 +12,4 @@ export const auth_token = {
 
 
 
-export const API_KEY = "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";
+export const API_KEY = "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";

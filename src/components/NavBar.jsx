@@ -5,6 +5,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { removeUser, setUser } from "../utils/redux-store/slice-store/userSlice";
 import GptSearch from "./GptSearch";
+import toast from "react-hot-toast";
 
 const NavBar = () => {
 
@@ -25,7 +26,8 @@ const NavBar = () => {
     {
         signOut(auth)
         .then(() =>{
-            alert("User Signed Out Successfully 💚");
+            // alert("User Signed Out Successfully 💚");
+            toast.success("User Signed Out Successfully 💚");
             navigate("/");
         })
     }
